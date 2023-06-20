@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Encriptador ALURA+ONE</title>
+
+        <!-- FAVICON -->
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+
+        <!--GOOGLE FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- BOOTSTRAP -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- FONTAWESOME 6.x -->
+        <script
+            src="https://kit.fontawesome.com/0c93aa4f41.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- CSS FILE -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo-alura-1">
+                <img
+                    class="logo-alura"
+                    src="./images/Logo1x.svg"
+                    alt="Logo-alura"
+                />
+            </div>
+        </header>
+
+        <section>
+            <section>
+                <div>
+                    <input
+                        class="texto-encriptar"
+                        type="text"
+                        name="texto"
+                        id="texto-encriptar"
+                        placeholder="Ingrese el texto aquí"
+                        autocapitalize="none"
+                    />
+                </div>
+
+                <div>
+                    <div class="etiqueta-texto">
+                        <div>
+                            <i class="fa-solid fa-circle-exclamation fa-xl"></i>
+                        </div>
+                        <div class="etiqueta-texto-texto">
+                            <label for="mensaje"
+                                >Solo letras minúsculas y sin acentos</label
+                            >
+                        </div>
+                    </div>
+                    <div class="grupo-botones">
+                        <div>
+                            <input
+                                class="encriptar"
+                                type="button"
+                                value="Encriptar"
+                            />
+                        </div>
+                        <div>
+                            <input
+                                class="desencriptar"
+                                type="button"
+                                value="Desencriptar"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div>
+                    <input
+                        class="cuadro-texto-respuesta"
+                        type="text"
+                        name="texto-respuesta"
+                        id=""
+                        autocapitalize="none"
+                        disabled
+                    />
+                </div>
+                <div>
+                    <img
+                        class="no-message-img"
+                        src="./images/Muñeco.png"
+                        alt="personaje-mensaje"
+                    />
+                </div>
+                <div class="no-msg">
+                    <div class="no-msg-encontrado">
+                        Ningún mensaje fue encontrado
+                    </div>
+                    <div class="no-msg-encontrado-desc">
+                        Ingresa el texto que deseas encriptar o desencriptar.
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <footer>
+            <p class="footer">
+                <i class="fa-regular fa-copyright"></i>
+                Miguel Barrera &nbsp; 🇲🇽
+                <span id="year"></span> &nbsp;
+            </p>
+            <div>
+                <span class="socialmedia">
+                    <a href="mailto:mabvmex@gmail.com">
+                        <i
+                            class="fa-regular fa-envelope"
+                            style="color: #c9c9d4"
+                        ></i>
+                    </a>
+                    <a href="https://twitter.com/mabvmex" target="_blank">
+                        <i
+                            class="fa-brands fa-twitter"
+                            style="color: #c9c9d4"
+                        ></i
+                    ></a>
+                    <a href="https://github.com/mabvmex" target="_blank">
+                        <i
+                            class="fa-brands fa-github"
+                            style="color: #c9c9d4"
+                        ></i
+                    ></a>
+                    <a href="https://linkedin.com/in/mabvmex" target="_blank">
+                        <i
+                            class="fa-brands fa-linkedin"
+                            style="color: #c9c9d4"
+                        ></i
+                    ></a>
+                </span>
+            </div>
+        </footer>
+    </body>
+    <script src="./index.js"></script>
+</html>
