@@ -1,3 +1,8 @@
+<!-- 
+    PENDIENTES:
+1. reemplazar letras con acento
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -53,15 +58,17 @@
             <!--  SECCIÓN IZQUIERDA: ESCRITURA DE TEXTO -->
             <section>
                 <div>
-                    <input
+                    <textarea
                         class="texto-encriptar"
                         id="texto-entrada"
                         type="text"
                         name="texto"
-                        id="texto-encriptar"
                         placeholder="Ingrese el texto aquí"
                         autocapitalize="none"
-                    />
+                        autofocus
+                        rows="4"
+                        cols="5"
+                    ></textarea>
                 </div>
 
                 <div>
@@ -80,16 +87,17 @@
                     <div class="grupo-botones">
                         <div>
                             <input
-                                class="encriptar"
+                                class="btn-encriptar"
                                 id="encriptar"
                                 type="button"
                                 value="Encriptar"
-                                />
-                                
+                                onclick="funcionMostrar()"
+                            />
                         </div>
                         <div>
                             <input
-                                class="desencriptar"
+                                class="btn-desencriptar"
+                                id="desencriptar"
                                 type="button"
                                 value="Desencriptar"
                             />
@@ -99,17 +107,18 @@
             </section>
 
             <!--  SECCIÓN DERECHA: RESULTADO DE TEXTO CIFRADO/DESCIFRADO -->
-            <section>
+
+            <section class="experimento">
                 <div>
-                    <input
+                    <textarea
                         class="cuadro-texto-respuesta"
                         id="cuadro-respuesta"
                         type="text"
                         name="texto-respuesta"
-                        id=""
                         autocapitalize="none"
                         disabled
-                    />
+                    >
+                    </textarea>
                 </div>
                 <div id="no-message-img-cluster">
                     <div>
@@ -130,6 +139,14 @@
                         </div>
                     </div>
                 </div>
+                <!-- BOTON INPUT DERECHO * COPIAR * -->
+
+                <input
+                    class="btn-copiar"
+                    id="copiar"
+                    type="button"
+                    value="copiar"
+                />
             </section>
         </section>
 
