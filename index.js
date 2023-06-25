@@ -1,17 +1,44 @@
-/*  DATE FOR FOOTER */
-
+/* FUNCIÓN  DATE PARA EL FOOTER */
+// ==============================
 const presentYear = new Date().getFullYear();
 document.querySelector("#year").textContent = presentYear;
 
 /* FUNCIÓN PARA MOSTRAR TEXTO */
-
+// ==============================
 function mostrar() {
     let textoEntrada = document.querySelector("#texto-entrada");
     let textoSalida = document.querySelector("#cuadro-respuesta");
 
-    textoSalida.value = textoEntrada.value;
+    /* FUNCIÓN PARA CIFRAR EL TEXTO */
+// =============================
+    let palabraCifrada = "";
+    function cifrado() {
+        Array.from(textoEntrada.value).forEach((letra) => {
+            let letraCifrada = "";
 
-    if (textoEntrada.value.length === 0) {
+            if (letra === "a") {
+                letraCifrada = "ai";
+            } else if (letra === "e") {
+                letraCifrada = "enter";
+            } else if (letra === "i") {
+                letraCifrada = "imes";
+            } else if (letra === "o") {
+                letraCifrada = "ober";
+            } else if (letra === "u") {
+                letraCifrada = "ufat";
+            } else {
+                letraCifrada = letra;
+            }
+
+            palabraCifrada += letraCifrada;
+        });
+    }
+
+    cifrado();
+
+    textoSalida.value = palabraCifrada;
+
+    if (palabraCifrada.length === 0) {
         document.querySelector("#no-message-img-cluster").style.display =
             "block";
         return;
@@ -24,7 +51,7 @@ function mostrar() {
 }
 
 /* FUNCIÓN PARA COPIAR TEXTO */
-
+// ==============================
 function copiarResultado() {
     let textoCopiado = document.querySelector("#cuadro-respuesta");
 
@@ -42,6 +69,9 @@ function copiarResultado() {
             console.log("Algo salió mal al copiar: " + err);
         });
 }
+
+/* FUNCIÓN DE CIFRADO */
+// ==============================
 
 /* 
 function convertirVocales() {
