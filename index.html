@@ -91,7 +91,7 @@
                                 id="encriptar"
                                 type="button"
                                 value="Encriptar"
-                                onclick="funcionMostrar()"
+                                onclick="mostrar()"
                             />
                         </div>
                         <div>
@@ -108,7 +108,7 @@
 
             <!--  SECCIÓN DERECHA: RESULTADO DE TEXTO CIFRADO/DESCIFRADO -->
 
-            <section class="experimento">
+            <section>
                 <div>
                     <textarea
                         class="cuadro-texto-respuesta"
@@ -116,7 +116,7 @@
                         type="text"
                         name="texto-respuesta"
                         autocapitalize="none"
-                        disabled
+                        readonly
                     >
                     </textarea>
                 </div>
@@ -146,6 +146,7 @@
                     id="copiar"
                     type="button"
                     value="copiar"
+                    onclick= "copiarResultado();"
                 />
             </section>
         </section>

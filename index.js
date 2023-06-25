@@ -5,7 +5,7 @@ document.querySelector("#year").textContent = presentYear;
 
 /* FUNCIÓN PARA MOSTRAR TEXTO */
 
-function funcionMostrar() {
+function mostrar() {
     let textoEntrada = document.querySelector("#texto-entrada");
     let textoSalida = document.querySelector("#cuadro-respuesta");
 
@@ -19,8 +19,30 @@ function funcionMostrar() {
         document.querySelector("#no-message-img-cluster").style.display =
             "none";
         textoEntrada.value = "";
+        textoEntrada.focus();
     }
 }
+
+/* FUNCIÓN PARA COPIAR TEXTO */
+
+function copiarResultado() {
+    let textoCopiado = document.querySelector("#cuadro-respuesta");
+
+    textoCopiado.focus();
+    textoCopiado.setSelectionRange(0, -1);
+    let texto = textoCopiado.value;
+
+    // - document.execCommand("copy"); es sustituido por Clipboard API
+    navigator.clipboard
+        .writeText(texto)
+        .then(() => {
+            texto;
+        })
+        .catch((err) => {
+            console.log("Algo salió mal al copiar: " + err);
+        });
+}
+
 /* 
 function convertirVocales() {
     var input = document.getElementById("input1");
