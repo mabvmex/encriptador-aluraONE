@@ -103,17 +103,27 @@ textarea:focus {
     border-radius: 24px;
     background-color: #fff;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    border-style: none;
-    text-transform: lowercase;
-    font-size: 24px;
-    color: #495057;
-    text-align: left;
-    padding: 50px;
-
+    
     /* 
     background-image: url("./images/Muñeco.png");
     background-repeat:no-repeat; 
     */
+}
+
+.area-texto-respuesta {
+    position: fixed;
+    left: 1032px;
+    top: 70px;
+    width: 400px;
+    height: 580px;
+    border-style: none;
+    text-transform: lowercase;
+    font-size: 24px;
+    background-color: #fff;
+    color: #495057;
+    text-align: left;
+    padding: 50px;
+    border-radius: 24px;
 }
 
 .no-message-img {

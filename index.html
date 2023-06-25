@@ -1,6 +1,20 @@
 <!-- 
     PENDIENTES:
-1. reemplazar letras con acento
+    1. Cifrar texto
+    2. Descifrar texto: Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original.
+        Las "llaves" de encriptación que utilizaremos son las siguientes:
+
+        La letra "e" es convertida para "enter"
+        La letra "i" es convertida para "imes"
+        La letra "a" es convertida para "ai"
+        La letra "o" es convertida para "ober"
+        La letra "u" es convertida para "ufat"
+
+    "gato" => "gaitober"
+    gaitober" => "gato"
+
+    3. No deben ser utilizados letras con acentos ni caracteres especiales
+    4. Responsive design
  -->
 
 <!DOCTYPE html>
@@ -109,9 +123,9 @@
             <!--  SECCIÓN DERECHA: RESULTADO DE TEXTO CIFRADO/DESCIFRADO -->
 
             <section>
-                <div>
+                <div class="cuadro-texto-respuesta">
                     <textarea
-                        class="cuadro-texto-respuesta"
+                        class="area-texto-respuesta"
                         id="cuadro-respuesta"
                         type="text"
                         name="texto-respuesta"
@@ -146,7 +160,7 @@
                     id="copiar"
                     type="button"
                     value="copiar"
-                    onclick= "copiarResultado();"
+                    onclick="copiarResultado();"
                 />
             </section>
         </section>
