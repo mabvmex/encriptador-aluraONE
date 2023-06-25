@@ -35,7 +35,8 @@
             crossorigin="anonymous"
         ></script>
 
-        <!-- CSS FILE -->
+        <!-- CSS FILES -->
+        <link rel="stylesheet" href="reset.css" />
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
@@ -48,12 +49,13 @@
                 />
             </div>
         </header>
-
         <section>
+            <!--  SECCIÓN IZQUIERDA: ESCRITURA DE TEXTO -->
             <section>
                 <div>
                     <input
                         class="texto-encriptar"
+                        id="texto-entrada"
                         type="text"
                         name="texto"
                         id="texto-encriptar"
@@ -73,13 +75,17 @@
                             >
                         </div>
                     </div>
+
+                    <!--  BOTONES DE ZONA IZQUIERDA -->
                     <div class="grupo-botones">
                         <div>
                             <input
                                 class="encriptar"
+                                id="encriptar"
                                 type="button"
                                 value="Encriptar"
-                            />
+                                />
+                                
                         </div>
                         <div>
                             <input
@@ -92,10 +98,12 @@
                 </div>
             </section>
 
+            <!--  SECCIÓN DERECHA: RESULTADO DE TEXTO CIFRADO/DESCIFRADO -->
             <section>
                 <div>
                     <input
                         class="cuadro-texto-respuesta"
+                        id="cuadro-respuesta"
                         type="text"
                         name="texto-respuesta"
                         id=""
@@ -103,56 +111,64 @@
                         disabled
                     />
                 </div>
-                <div>
-                    <img
-                        class="no-message-img"
-                        src="./images/Muñeco.png"
-                        alt="personaje-mensaje"
-                    />
-                </div>
-                <div class="no-msg">
-                    <div class="no-msg-encontrado">
-                        Ningún mensaje fue encontrado
+                <div id="no-message-img-cluster">
+                    <div>
+                        <!-- REVISAR CSS - .cuadro-text-respuesta -->
+                        <img
+                            class="no-message-img"
+                            src="./images/Muñeco.png"
+                            alt="personaje-mensaje"
+                        />
                     </div>
-                    <div class="no-msg-encontrado-desc">
-                        Ingresa el texto que deseas encriptar o desencriptar.
+                    <div class="no-msg">
+                        <div class="no-msg-encontrado">
+                            Ningún mensaje fue encontrado
+                        </div>
+                        <div class="no-msg-encontrado-desc">
+                            Ingresa el texto que deseas encriptar o
+                            desencriptar.
+                        </div>
                     </div>
                 </div>
             </section>
         </section>
 
+        <!--  PIE DE PÁGINA -->
         <footer>
             <p class="footer">
                 <i class="fa-regular fa-copyright"></i>
                 Miguel Barrera &nbsp; 🇲🇽
                 <span id="year"></span> &nbsp;
             </p>
+
+            <!-- SECCIÓN DE CONTACTO Y BOTONES SOCIALES -->
             <div>
                 <span class="socialmedia">
-                    <a href="mailto:mabvmex@gmail.com">
-                        <i
-                            class="fa-regular fa-envelope"
-                            style="color: #c9c9d4"
-                        ></i>
+                    <a href="mailto:mabvmex@gmail.com" title="email">
+                        <i class="fa-solid fa-envelope"></i>
                     </a>
-                    <a href="https://twitter.com/mabvmex" target="_blank">
-                        <i
-                            class="fa-brands fa-twitter"
-                            style="color: #c9c9d4"
-                        ></i
+
+                    <a
+                        href="https://twitter.com/mabvmex"
+                        target="_blank"
+                        title="twitter"
+                    >
+                        <i class="fa-brands fa-twitter"></i
                     ></a>
-                    <a href="https://github.com/mabvmex" target="_blank">
-                        <i
-                            class="fa-brands fa-github"
-                            style="color: #c9c9d4"
-                        ></i
+                    <a
+                        href="https://github.com/mabvmex"
+                        target="_blank"
+                        title="github"
+                    >
+                        <i class="fa-brands fa-github"></i
                     ></a>
-                    <a href="https://linkedin.com/in/mabvmex" target="_blank">
-                        <i
-                            class="fa-brands fa-linkedin"
-                            style="color: #c9c9d4"
-                        ></i
-                    ></a>
+                    <a
+                        href="https://linkedin.com/in/mabvmex"
+                        target="_blank"
+                        title="linkedin"
+                    >
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
                 </span>
             </div>
         </footer>

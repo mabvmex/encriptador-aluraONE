@@ -68,6 +68,13 @@ input:focus {
     border: 1px solid #0a3871;
     border-radius: 24px;
 }
+
+.encriptar:hover {
+    border-color: #e5e5e5;
+    box-shadow: 5px 5px 25px 5px #0a3871;
+    transform: scale(1.05);
+}
+
 .desencriptar {
     width: 328px;
     padding: 24px;
@@ -76,6 +83,12 @@ input:focus {
     box-sizing: border-box;
     border: 1px solid #0a3871;
     border-radius: 24px;
+}
+
+.desencriptar:hover {
+    border-color: #e5e5e5;
+    box-shadow: 5px 5px 25px 5px #0a3871;
+    transform: scale(1.05);
 }
 
 .cuadro-texto-respuesta {
@@ -90,6 +103,10 @@ input:focus {
     border-style: none;
     text-transform: lowercase;
     color: #495057;
+    /* 
+    background-image: url("./images/Muñeco.png");
+    background-repeat:no-repeat; 
+    */
 }
 
 .no-message-img {
@@ -138,30 +155,51 @@ input:focus {
     background-color: #0a3871;
     width: 100vw;
     color: #e5e5e5;
-    padding: 0 auto;
     font-size: 14px;
     gap: 20px;
 }
 
-.footer,
-p {
-    display: flex;
+footer p {
     justify-content: center;
     align-items: center;
     margin: auto 0;
-    font-size: 14px;
 }
 
 .socialmedia {
     display: flex;
     position: fixed;
     gap: 20px;
-    bottom: 5px;
+    bottom: 8px;
     right: 30px;
-    color: #e5e5e5;
+
+    > a {
+        color: #c9c9d4;
+    }
 }
 
-a:link {
-    text-decoration: none;
-    color: #e5e5e5;
+a:hover {
+    /* rotate(-10deg); */
+    transform: scale(2);
+
+    .fa-envelope:hover {
+        color: rgb(255, 166, 0);
+    }
+    .fa-twitter {
+        color: #188cd8;
+    }
+
+    .fa-github {
+        color: #141b28;
+        background-image: radial-gradient(white 62%, #0a3871 5%, #0a3871 5%);
+    }
+
+    .fa-linkedin {
+        color: #0b65c2;
+        background-image: radial-gradient(
+            circle,
+            white 65%,
+            #0a3871 1%,
+            #0a3871 1%
+        );
+    }
 }
