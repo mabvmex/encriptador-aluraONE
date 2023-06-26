@@ -1,8 +1,3 @@
-/* FUNCIÓN  DATE PARA EL FOOTER */
-// ==============================
-const presentYear = new Date().getFullYear();
-document.querySelector("#year").textContent = presentYear;
-
 /* FUNCIÓN PARA MOSTRAR TEXTO */
 // ==============================
 function mostrar() {
@@ -10,12 +5,13 @@ function mostrar() {
     let textoSalida = document.querySelector("#cuadro-respuesta");
 
     /* FUNCIÓN PARA CIFRAR EL TEXTO */
-// =============================
+    // =============================
     let palabraCifrada = "";
     function cifrado() {
         Array.from(textoEntrada.value).forEach((letra) => {
             let letraCifrada = "";
 
+            // ALTERNATIVA: if (letra === "a"  || letra === "á" )
             if (letra === "a") {
                 letraCifrada = "ai";
             } else if (letra === "e") {
@@ -41,10 +37,14 @@ function mostrar() {
     if (palabraCifrada.length === 0) {
         document.querySelector("#no-message-img-cluster").style.display =
             "block";
+        document.querySelector("#copiar").style.display = "none";
+        textoEntrada.focus();
         return;
     } else {
         document.querySelector("#no-message-img-cluster").style.display =
             "none";
+        document.querySelector("#copiar").style.display = "block";
+
         textoEntrada.value = "";
         textoEntrada.focus();
     }
@@ -70,26 +70,25 @@ function copiarResultado() {
         });
 }
 
-/* FUNCIÓN DE CIFRADO */
-// ==============================
+// FUNCIÓN REEMPLAZAR VOCALES CON ACENTO
+// ========================
 
-/* 
 function convertirVocales() {
-    var input = document.getElementById("input1");
-    var valor = input.value;
+    let typing = document.querySelector("#texto-entrada");
+    let conversion = typing.value;
 
-    valor = valor.replace(/[áÁ]/g, "a");
-    valor = valor.replace(/[éÉ]/g, "e");
-    valor = valor.replace(/[íÍ]/g, "i");
-    valor = valor.replace(/[óÓ]/g, "o");
-    valor = valor.replace(/[úÚ]/g, "u");
+    conversion = conversion.replace(/[áÁ]/g, "a");
+    conversion = conversion.replace(/[éÉ]/g, "e");
+    conversion = conversion.replace(/[íÍ]/g, "i");
+    conversion = conversion.replace(/[óÓ]/g, "o");
+    conversion = conversion.replace(/[úÚ]/g, "u");
+    conversion = conversion.replace(/[úÚ]/g, "u");
+    conversion = conversion.replace(/[^\w\s]/gi, "");
 
-    input.value = valor;
-} */
+    typing.value = conversion;
+}
 
-/* 
-UTILS:
-========
-- document.getElementById("year").textContent = presentYear;
-- document.getElementById("encriptar").style.display = "none";
-*/
+/* FUNCIÓN  DATE PARA EL FOOTER */
+// ==============================
+const presentYear = new Date().getFullYear();
+document.querySelector("#year").textContent = presentYear;

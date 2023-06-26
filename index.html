@@ -1,7 +1,6 @@
 <!-- 
     PENDIENTES:
     1. Descifrar texto: Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original.
-    2. No deben ser utilizados letras con acentos ni caracteres especiales
     3. Responsive design
  -->
 
@@ -68,8 +67,7 @@
                         placeholder="Ingrese el texto aquí"
                         autocapitalize="none"
                         autofocus
-                        rows="4"
-                        cols="5"
+                        oninput="convertirVocales()"
                     ></textarea>
                 </div>
 
@@ -79,9 +77,7 @@
                             <i class="fa-solid fa-circle-exclamation fa-xl"></i>
                         </div>
                         <div class="etiqueta-texto-texto">
-                            <label for="mensaje"
-                                >Solo letras minúsculas y sin acentos</label
-                            >
+                            <p>Solo letras minúsculas y sin acentos. No se permiten caracteres especiales.</p>
                         </div>
                     </div>
 
@@ -140,14 +136,13 @@
                             desencriptar.
                         </div>
                     </div>
+                    <!-- BOTON INPUT DERECHO * COPIAR * -->
                 </div>
-                <!-- BOTON INPUT DERECHO * COPIAR * -->
-
                 <input
                     class="btn-copiar"
                     id="copiar"
                     type="button"
-                    value="copiar"
+                    value="Copiar"
                     onclick="copiarResultado();"
                 />
             </section>
