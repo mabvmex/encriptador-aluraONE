@@ -1,17 +1,17 @@
+let textoEntrada = document.querySelector("#texto-entrada");
+let textoSalida = document.querySelector("#cuadro-respuesta");
+
 /* FUNCIÓN PARA MOSTRAR TEXTO */
 // ==============================
-function mostrar() {
-    let textoEntrada = document.querySelector("#texto-entrada");
-    let textoSalida = document.querySelector("#cuadro-respuesta");
 
+function mostrar() {
+    let palabraCifrada = "";
     /* FUNCIÓN PARA CIFRAR EL TEXTO */
     // =============================
-    let palabraCifrada = "";
     function cifrado() {
         Array.from(textoEntrada.value).forEach((letra) => {
             let letraCifrada = "";
 
-            // ALTERNATIVA: if (letra === "a"  || letra === "á" )
             if (letra === "a") {
                 letraCifrada = "ai";
             } else if (letra === "e") {
@@ -33,20 +33,42 @@ function mostrar() {
     cifrado();
 
     textoSalida.value = palabraCifrada;
-
     if (palabraCifrada.length === 0) {
-        document.querySelector("#no-message-img-cluster").style.display =
-            "block";
-        document.querySelector("#copiar").style.display = "none";
-        textoEntrada.focus();
-        return;
+        return limpiezaInputCasoUno();
     } else {
-        document.querySelector("#no-message-img-cluster").style.display =
-            "none";
-        document.querySelector("#copiar").style.display = "block";
+        return limpiezaInputCasoDos();
+    }
+}
 
-        textoEntrada.value = "";
-        textoEntrada.focus();
+/* FUNCIÓN PARA MOSTRAR TEXTO DESCIFRADO */
+// =============================
+
+function mostrarTextoDescifrado() {
+    let cifrado = textoEntrada.value;
+    let palabraDescifrada = "";
+    let vocalCifrada = {
+        ai: "a",
+        enter: "e",
+        imes: "i",
+        ober: "o",
+        ufat: "u",
+    };
+
+    palabraDescifrada = cifrado.replace(
+        /ai|enter|imes|ober|ufat/gi,
+        (vocal) => {
+            return vocalCifrada[vocal];
+        }
+    );
+
+    console.log("El resultado descifrado es: " + palabraDescifrada);
+
+    textoSalida.value = palabraDescifrada;
+
+    if (palabraDescifrada.length === 0) {
+        return limpiezaInputCasoUno();
+    } else {
+        return limpiezaInputCasoDos();
     }
 }
 
@@ -68,6 +90,8 @@ function copiarResultado() {
         .catch((err) => {
             console.log("Algo salió mal al copiar: " + err);
         });
+
+    textoEntrada.focus();
 }
 
 // FUNCIÓN REEMPLAZAR VOCALES CON ACENTO
@@ -86,6 +110,22 @@ function convertirVocales() {
     conversion = conversion.replace(/[^\w\s]/gi, "");
 
     typing.value = conversion;
+}
+
+// FUNCIONES DE OCULTAR/MOSTRAR EN INPUTS PRINCIAPLES
+// ========================
+
+function limpiezaInputCasoUno() {
+    document.querySelector("#no-message-img-cluster").style.display = "block";
+    document.querySelector("#copiar").style.display = "none";
+    textoEntrada.focus();
+}
+
+function limpiezaInputCasoDos() {
+    document.querySelector("#no-message-img-cluster").style.display = "none";
+    document.querySelector("#copiar").style.display = "block";
+    textoEntrada.value = "";
+    textoEntrada.focus();
 }
 
 /* FUNCIÓN  DATE PARA EL FOOTER */
