@@ -221,7 +221,7 @@ textarea:focus {
 
 
 .btn-copiar {
-    display: flex;
+    display: none;
     position: relative;
     top: 630px;
     left: 300px;
