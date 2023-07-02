@@ -1,28 +1,48 @@
 body {
-    background-color: #e5e5e5;
+    background-color: #f3f5fc;
     font-family: inter;
 }
 
 .logo-alura {
-    position: absolute;
+    position: fixed;
     width: 120px;
     height: 48px;
-    left: 40px;
     top: 40px;
+    left: 40px;
+    gap: 40px;
 }
 
+/* REVISAR */
+.principal {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    position: relative;
+
+    /* justify-content:stretch; */ /* REVISAR */
+    /* align-items: center; */
+}
+
+/* AQUÍ COMIENZAN LOS ESTILOS DE LA SECCIÓN IZQUIERDA */
+/* ================================================== */
 .texto-encriptar {
-    position: absolute;
-    /* width: 557px; */
-    /* height: 48px; */
     width: 680px;
-    height: 467px;
-    left: 240px;
+    height: 480px;
     top: 168px;
+    left: 180px;
     font-size: 32px;
+    line-height: 48px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-shrink: 0;
     color: #0b3871;
-    background-color: #e5e5e5;
-    border-style: hidden;
+    padding: 30px;
+    background-color: #f3f5fc;
+    /* border-style: hidden; */
+    border-radius: 24px;
     text-transform: lowercase;
 }
 
@@ -38,13 +58,27 @@ textarea:focus {
     outline: none;
 }
 
-.etiqueta-texto {
-    position: absolute;
-    left: 240px;
-    top: 651px;
-    width: 329px;
+.seccion-inferior-izquierda {
+    width: 229px;
     height: 18px;
+    top: 80px;
+    left: 180px;
     display: inline-flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    /* top: 851px; */
+}
+
+.etiqueta-texto {
+    display: flex;
+    position: relative;
+    top: 130px;
+    width: 330px;
+    height: 0;
+    left: 0px;
+    margin: auto;
     align-items: center;
     gap: 10px;
     font-size: 12px;
@@ -52,24 +86,32 @@ textarea:focus {
 }
 
 .grupo-botones {
-    display: flex;
-    position: absolute;
-    left: 240px;
-    top: 685px;
+    top: 154px;
+    left: 225px;
     width: 680px;
+    display: flex;
+    position: relative;
     gap: 24px;
-    /* height: 67px; */
-    /* padding: 0px; */
-    /* flex-direction: row; */
-}
+    align-items: center;
+    justify-content: space-around;
 
-.btn-encriptar {
-    width: 328px;
-    padding: 24px;
-    background-color: #0b3871;
-    color: #fff;
-    border: 1px solid #0a3871;
-    border-radius: 24px;
+    .btn-encriptar {
+        width: 328px;
+        padding: 24px;
+        border: 1px solid #0a3871;
+        border-radius: 24px;
+        background-color: #0b3871;
+        color: #fff;
+    }
+
+    .btn-desencriptar {
+        width: 328px;
+        padding: 24px;
+        border: 1px solid #0a3871;
+        border-radius: 24px;
+        background-color: #d8dfe8;
+        color: #0b3871;
+    }
 }
 
 .btn-encriptar:hover {
@@ -78,101 +120,111 @@ textarea:focus {
     transform: scale(1.05);
 }
 
-.btn-desencriptar {
-    width: 328px;
-    padding: 24px;
-    background-color: #d8dfe8;
-    color: #0b3871;
-    border: 1px solid #0a3871;
-    border-radius: 24px;
-}
-
 .btn-desencriptar:hover {
-    border-color: #e5e5e5;
+    border-color: #f3f5fc;
     box-shadow: 5px 5px 25px 5px #0a3871;
     transform: scale(1.05);
 }
 
-.cuadro-texto-respuesta {
-    position: absolute;
-    left: 1032px;
-    top: 40px;
-    width: 400px;
-    /* height: 725px; */
-    height: 745px;
-    border-radius: 24px;
-    background-color: #fff;
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
+/* AQUÍ COMIENZAN LOS ESTILOS DE LA SECCIÓN DERECHA */
+/* ================================================ */
 
+.cuadro-texto-respuesta {
+    top: 90px;
+    left: 220px;
+    width: 400px;
+    height: 10px; /* REVISAR */
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 24px;
+    background-color: #f3f5fc;
     /* 
     background-image: url("./images/Muñeco.png");
     background-repeat:no-repeat; 
     */
-}
 
-.area-texto-respuesta {
-    width: 400px;
-    height: 580px;
-    margin-top: 40px;
-    border-style: none;
-    text-transform: lowercase;
-    font-size: 24px;
-    background-color: #fff;
-    color: #495057;
-    text-align: left;
-    padding: 50px;
-    border-radius: 24px;
-    box-sizing: border-box;
+    .area-texto-respuesta {
+        top: 0px;
+        width: 400px;
+        height: 730px;
+        display: flex;
+        padding: 20px; /* ERA DE 25 */
+        position: relative;
+        border-radius: 24px;
+        background-color: #fff;
+        /* border-style: hidden; */
+        font-size: 24px;
+        color: #495057;
+        box-sizing: border-box;
+        text-transform: lowercase;
+    }
 }
 
 .no-message-img {
-    position: absolute;
-    left: 1062px;
-    top: 183px;
-    /* top: 283px; */
-    /* height: 30%;
-    width: 20%; */
-    width: 336px;
+    display: flex;
+    position: relative;
+    top: -600px;
+    left: 0px;
+    width: 400px;
     height: 304px;
-    color: #0a3871;
     object-fit: cover;
 }
 
 .no-msg {
-    position: absolute;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    top: -550px;
+    left:30px;
     width: 336px;
     height: 122px;
-    left: 1062px;
-    top: 499px;
-    /* top: 619px; */
     gap: 16px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 
     > .no-msg-encontrado {
-        font-weight: 700;
+        font-weight: bold;
         font-size: 24px;
         line-height: 29px;
-        /* text-align: center; */
     }
 
     > .no-msg-encontrado-desc {
-        flex: none;
-        font-weight: 400;
         font-size: 16px;
         line-height: 24px;
-        /* text-align: center; */
         color: #495057;
     }
 }
 
+/* REVISAR AQUÍ */
+/* REVISAR AQUÍ */
+
+
+.no-message-img-cluster {
+    width: 100px;
+    height:-100 px;
+    top: 0;
+    left: 0;
+}
+.cuadro-texto-respuesta {
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    left: 250px;
+}
+
+
+/* REVISAR AQUÍ */
+/* REVISAR AQUÍ */ 
+
+
+
 .btn-copiar {
-    display: none;
-    position: absolute;
-    /* left: 1032px; */
-    left: 1069px;
-    top: 682px;
-    /* top: 885px; */
+    display: flex;
+    position: relative;
+    top: 630px;
+    left: 300px;
     width: 336px;
     height: 67px;
     color: #0b3871;
@@ -190,22 +242,34 @@ textarea:focus {
     transform: scale(1.05);
 }
 
-.footer {
+footer {
     display: flex;
     position: fixed;
     bottom: 0;
-    padding: 10px;
-    background-color: #0a3871;
     width: 100vw;
-    color: #e5e5e5;
+    padding: 10px;
     font-size: 14px;
-    gap: 20px;
-}
-
-footer p {
+    color: #e5e5e5;
     justify-content: center;
     align-items: center;
-    margin: auto 0;
+    background-color: #0a3871;
+
+    > .footer-bar {
+        display: flex;
+        gap: 10px;
+
+        > .year {
+            align-content: center;
+        }
+    }
+}
+
+.year {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
 .socialmedia {
@@ -221,13 +285,12 @@ footer p {
 }
 
 a:hover {
-    /* rotate(-10deg); */
-    transform: scale(2);
+    transform: scale(2); /* rotate(-10deg); */
 
-    .fa-envelope:hover {
+    > .fa-envelope:hover {
         color: rgb(255, 166, 0);
     }
-    .fa-twitter {
+    > .fa-twitter {
         color: #188cd8;
     }
 

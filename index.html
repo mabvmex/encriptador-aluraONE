@@ -1,10 +1,3 @@
-<!-- 
-    PENDIENTES:
-    1. Descifrar texto: Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original.
-    2. En el JS revisar el focus();
-    3. Responsive design
- -->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -46,42 +39,48 @@
         <link rel="stylesheet" href="reset.css" />
         <link rel="stylesheet" href="style.css" />
     </head>
+
     <body>
         <header>
-            <div class="logo-alura-1">
-                <img
-                    class="logo-alura"
-                    src="./images/Logo1x.svg"
-                    alt="Logo-alura"
-                />
+            <div>
+                <a href="#">
+                    <img
+                        class="logo-alura"
+                        src="./images/Logo1x.svg"
+                        alt="Logo-alura"
+                    />
+                </a>
             </div>
         </header>
-        <section>
-            <!--  SECCIÓN IZQUIERDA: ESCRITURA DE TEXTO -->
-            <section>
-                <div>
-                    <textarea
-                        class="texto-encriptar"
-                        id="texto-entrada"
-                        type="text"
-                        name="texto"
-                        placeholder="Ingrese el texto aquí"
-                        autocapitalize="none"
-                        autofocus
-                        oninput="convertirVocales()"
-                    ></textarea>
-                </div>
 
-                <div>
+        <!--  SECCIÓN IZQUIERDA: ESCRITURA DE TEXTO -->
+        <main class="principal">
+            <section>
+                <textarea
+                    class="texto-encriptar"
+                    id="texto-entrada"
+                    type="text"
+                    name="texto"
+                    placeholder="Ingrese el texto aquí"
+                    autocapitalize="none"
+                    autofocus
+                    oninput="convertirVocales()"
+                ></textarea>
+                <!-- onkeypress="if (event.keyCode == 13) ejecutarEnter()" -->
+                <!-- INPUT ONclick ENTER -->
+
+                <div class="seccion-inferior-izquierda">
                     <div class="etiqueta-texto">
                         <div>
                             <i class="fa-solid fa-circle-exclamation fa-xl"></i>
                         </div>
-                        <div class="etiqueta-texto-texto">
-                            <p>Solo letras minúsculas y sin acentos. No se permiten caracteres especiales.</p>
+                        <div>
+                            <p>
+                                Solo letras minúsculas y sin acentos. No se
+                                permiten caracteres especiales.
+                            </p>
                         </div>
                     </div>
-
                     <!--  BOTONES DE ZONA IZQUIERDA -->
                     <div class="grupo-botones">
                         <div>
@@ -105,40 +104,39 @@
                     </div>
                 </div>
             </section>
-
             <!--  SECCIÓN DERECHA: RESULTADO DE TEXTO CIFRADO/DESCIFRADO -->
-
             <section>
                 <div class="cuadro-texto-respuesta">
-                    <textarea
-                        class="area-texto-respuesta"
-                        id="cuadro-respuesta"
-                        type="text"
-                        name="texto-respuesta"
-                        autocapitalize="none"
-                        readonly
-                    >
-                    </textarea>
-                </div>
-                <div id="no-message-img-cluster">
-                    <div>
-                        <!-- REVISAR CSS - .cuadro-text-respuesta -->
-                        <img
-                            class="no-message-img"
-                            src="./images/Muñeco.png"
-                            alt="personaje-mensaje"
-                        />
-                    </div>
-                    <div class="no-msg">
-                        <div class="no-msg-encontrado">
-                            Ningún mensaje fue encontrado
+                    <section>
+                        <textarea
+                            class="area-texto-respuesta"
+                            id="cuadro-respuesta"
+                            type="text"
+                            name="texto-respuesta"
+                            autocapitalize="none"
+                            readonly
+                        ></textarea>
+
+                        <div id="no-message-img-cluster">
+                            <!-- REVISAR CSS - .cuadro-text-respuesta -->
+                            <img
+                                class="no-message-img"
+                                src="./images/Muñeco.png"
+                                alt="personaje-mensaje"
+                            />
+
+                            <div class="no-msg">
+                                <div class="no-msg-encontrado">
+                                    Ningún mensaje fue encontrado
+                                </div>
+                                <div class="no-msg-encontrado-desc">
+                                    Ingresa el texto que deseas encriptar o
+                                    desencriptar.
+                                </div>
+                            </div>
+                            <!-- BOTON INPUT DERECHO * COPIAR * enter -->
                         </div>
-                        <div class="no-msg-encontrado-desc">
-                            Ingresa el texto que deseas encriptar o
-                            desencriptar.
-                        </div>
-                    </div>
-                    <!-- BOTON INPUT DERECHO * COPIAR * -->
+                    </section>
                 </div>
                 <input
                     class="btn-copiar"
@@ -148,45 +146,44 @@
                     onclick="copiarResultado();"
                 />
             </section>
-        </section>
+        </main>
 
         <!--  PIE DE PÁGINA -->
         <footer>
-            <p class="footer">
+            <div class="footer-bar">
                 <i class="fa-regular fa-copyright"></i>
-                Miguel Barrera &nbsp; 🇲🇽
-                <span id="year"></span> &nbsp;
-            </p>
+                <p id="year" class="year"></p>
+                <p>Miguel Barrera &nbsp; 🇲🇽</p>
+            </div>
 
             <!-- SECCIÓN DE CONTACTO Y BOTONES SOCIALES -->
-            <div>
-                <span class="socialmedia">
-                    <a href="mailto:mabvmex@gmail.com" title="email">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
 
-                    <a
-                        href="https://twitter.com/mabvmex"
-                        target="_blank"
-                        title="twitter"
-                    >
-                        <i class="fa-brands fa-twitter"></i
-                    ></a>
-                    <a
-                        href="https://github.com/mabvmex"
-                        target="_blank"
-                        title="github"
-                    >
-                        <i class="fa-brands fa-github"></i
-                    ></a>
-                    <a
-                        href="https://linkedin.com/in/mabvmex"
-                        target="_blank"
-                        title="linkedin"
-                    >
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                </span>
+            <div class="socialmedia">
+                <a href="mailto:mabvmex@gmail.com" title="email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+                <a
+                    href="https://twitter.com/mabvmex"
+                    target="_blank"
+                    title="twitter"
+                >
+                    <i class="fa-brands fa-twitter"></i
+                ></a>
+                <a
+                    href="https://github.com/mabvmex"
+                    target="_blank"
+                    title="github"
+                >
+                    <i class="fa-brands fa-github"></i
+                ></a>
+                <a
+                    href="https://linkedin.com/in/mabvmex"
+                    target="_blank"
+                    title="linkedin"
+                >
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
             </div>
         </footer>
     </body>

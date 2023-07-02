@@ -1,6 +1,14 @@
 let textoEntrada = document.querySelector("#texto-entrada");
 let textoSalida = document.querySelector("#cuadro-respuesta");
 
+// function ejecutarEnter() {
+//     if (textoSalida.value !== 0) {
+//         mostrarTextoDescifrado();
+//     } else {
+//         mostrar();
+//     }
+// }
+
 /* FUNCIÓN PARA MOSTRAR TEXTO */
 // ==============================
 
@@ -32,6 +40,9 @@ function mostrar() {
 
     cifrado();
 
+    // textoSalida= palabraCifrada;
+    // if (textoSalida.value.length === 0) {
+
     textoSalida.value = palabraCifrada;
     if (palabraCifrada.length === 0) {
         return limpiezaInputCasoUno();
@@ -61,8 +72,6 @@ function mostrarTextoDescifrado() {
         }
     );
 
-    console.log("El resultado descifrado es: " + palabraDescifrada);
-
     textoSalida.value = palabraDescifrada;
 
     if (palabraDescifrada.length === 0) {
@@ -90,7 +99,7 @@ function copiarResultado() {
         .catch((err) => {
             console.log("Algo salió mal al copiar: " + err);
         });
-
+    // texto.setSelectionRange(0, -1);
     textoEntrada.focus();
 }
 
@@ -118,12 +127,13 @@ function convertirVocales() {
 function limpiezaInputCasoUno() {
     document.querySelector("#no-message-img-cluster").style.display = "block";
     document.querySelector("#copiar").style.display = "none";
+    textoEntrada.value = "";
     textoEntrada.focus();
 }
 
 function limpiezaInputCasoDos() {
     document.querySelector("#no-message-img-cluster").style.display = "none";
-    document.querySelector("#copiar").style.display = "block";
+    document.querySelector("#copiar").style.display = "flex";
     textoEntrada.value = "";
     textoEntrada.focus();
 }
