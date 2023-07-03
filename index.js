@@ -56,6 +56,7 @@ function mostrarTextoDescifrado() {
             let tipoAlerta = ".alerta-descifrado";
             document.querySelector(tipoAlerta).style.display = "flex";
             clasesAnimacionAlerta(tipoAlerta);
+
             return vocalCifrada[vocal];
         }
     );
@@ -115,14 +116,14 @@ function convertirVocales() {
 /* FUNCIONES DE OCULTAR/MOSTRAR EN INPUTS PRINCIAPLES */
 // =====================================================
 function limpiezaInputCasoUno() {
-    document.querySelector("#no-message-img-cluster").style.display = "block";
+    document.querySelector(".grupo-imagen").style.display = "block";
     document.querySelector("#copiar").style.display = "none";
     textoEntrada.value = "";
     textoEntrada.focus();
 }
 
 function limpiezaInputCasoDos() {
-    document.querySelector("#no-message-img-cluster").style.display = "none";
+    document.querySelector(".grupo-imagen").style.display = "none";
     document.querySelector("#copiar").style.display = "flex";
     textoEntrada.value = "";
     textoEntrada.focus();

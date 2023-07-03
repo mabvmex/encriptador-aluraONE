@@ -35,6 +35,12 @@
             crossorigin="anonymous"
         ></script>
 
+        <!-- ANIMATE.CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+
         <!-- CSS FILES -->
         <link rel="stylesheet" href="reset.css" />
         <link rel="stylesheet" href="style.css" />
@@ -55,7 +61,7 @@
 
         <!--  SECCIÓN IZQUIERDA: ESCRITURA DE TEXTO -->
         <main class="principal">
-            <section>
+            <section class="seccion-Uno">
                 <textarea
                     class="texto-encriptar"
                     id="texto-entrada"
@@ -81,6 +87,7 @@
                             </p>
                         </div>
                     </div>
+
                     <!--  BOTONES DE ZONA IZQUIERDA -->
                     <div class="grupo-botones">
                         <div>
@@ -89,7 +96,7 @@
                                 id="encriptar"
                                 type="button"
                                 value="Encriptar"
-                                onclick="mostrar()"
+                                onclick="cifrarTexto()"
                             />
                         </div>
                         <div>
@@ -104,40 +111,75 @@
                     </div>
                 </div>
             </section>
+
             <!--  SECCIÓN DERECHA: RESULTADO DE TEXTO CIFRADO/DESCIFRADO -->
-            <section>
-                <div class="cuadro-texto-respuesta">
-                    <section>
-                        <textarea
-                            class="area-texto-respuesta"
-                            id="cuadro-respuesta"
-                            type="text"
-                            name="texto-respuesta"
-                            autocapitalize="none"
-                            readonly
-                        ></textarea>
-
-                        <div id="no-message-img-cluster">
-                            <!-- REVISAR CSS - .cuadro-text-respuesta -->
-                            <img
-                                class="no-message-img"
-                                src="./images/Muñeco.png"
-                                alt="personaje-mensaje"
-                            />
-
-                            <div class="no-msg">
-                                <div class="no-msg-encontrado">
-                                    Ningún mensaje fue encontrado
-                                </div>
-                                <div class="no-msg-encontrado-desc">
-                                    Ingresa el texto que deseas encriptar o
-                                    desencriptar.
-                                </div>
-                            </div>
-                            <!-- BOTON INPUT DERECHO * COPIAR * enter -->
+            <section class="seccion-Dos">
+                <article>
+                    <!-- ALERTA AL COPIAR -->
+                    <div
+                        class="alerta alerta-copiado alert alert-success align-items-center animate__animated animate__bounceInRight"
+                        role="alert"
+                    >
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            ¡Texto copiado con éxito!
                         </div>
-                    </section>
+                    </div>
+
+                    <!-- ALERTA AL CIFRAR -->
+                    <div
+                        class="alerta alerta-cifrado alert alert-info align-items-center animate__animated animate__bounceInRight"
+                        role="alert"
+                    >
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            ¡Texto fue cifrado con éxito!
+                        </div>
+                    </div>
+
+                    <!-- ALERTA AL DESCIFRAR -->
+                    <div
+                        class="alerta alerta-descifrado alert alert-primary align-items-center animate__animated animate__bounceInRight"
+                        role="alert"
+                    >
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            ¡Texto fue descifrado con éxito!
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ÁREA DE RESULTADOS -->
+                <div class="cuadro-texto-respuesta">
+                    <textarea
+                        class="area-texto-respuesta"
+                        id="cuadro-respuesta"
+                        type="text"
+                        name="texto-respuesta"
+                        autocapitalize="none"
+                        readonly
+                    ></textarea>
                 </div>
+
+                <!-- ESTADO DEFAULT: NO IMAGEN NI TEXTO -->
+                <div class="grupo-imagen">
+                    <img
+                        class="info-img"
+                        src="./images/character.png"
+                        alt="personaje-mensaje"
+                    />
+
+                    <div class="no-msg">
+                        <div class="no-msg-encontrado">
+                            Ningún mensaje fue encontrado
+                        </div>
+                        <div class="no-msg-encontrado-desc">
+                            Ingresa el texto que deseas encriptar o
+                            desencriptar.
+                        </div>
+                    </div>
+                </div>
+                <!-- BOTON INPUT DERECHO -->
                 <input
                     class="btn-copiar"
                     id="copiar"
@@ -187,5 +229,7 @@
             </div>
         </footer>
     </body>
+
+    <!-- ARCHIVO JS PRINCIPAL -->
     <script src="./index.js"></script>
 </html>
