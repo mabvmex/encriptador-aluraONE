@@ -31,6 +31,7 @@ function cifrarTexto() {
 
     textoSalida.value = palabraCifrada;
     if (palabraCifrada.length === 0) {
+        textoSalida.value = "";
         return limpiezaInputCasoUno();
     } else {
         return limpiezaInputCasoDos();
@@ -89,7 +90,6 @@ function copiarResultado() {
         .catch((err) => {
             console.log("Algo salió mal al copiar: " + err);
         });
-    // texto.setSelectionRange(0, -1);
     textoEntrada.focus();
 
     let tipoAlerta = ".alerta-copiado";
@@ -132,7 +132,7 @@ function limpiezaInputCasoDos() {
 /*  FUNCIÓN PARA ANIMAR ALERTA DE NOTIFICACIÓN */
 // ==============================================
 function clasesAnimacionAlerta(tipoAlerta) {
-    const desapareceAlerta = setTimeout(limpiarAlerta, 1500);
+    setTimeout(limpiarAlerta, 1500);
     function limpiarAlerta() {
         document
             .querySelector(tipoAlerta)
@@ -147,11 +147,3 @@ function clasesAnimacionAlerta(tipoAlerta) {
 // ==============================
 const presentYear = new Date().getFullYear();
 document.querySelector("#year").textContent = presentYear;
-
-// function ejecutarEnter() {
-//     if (textoSalida.value !== 0) {
-//         mostrarTextoDescifrado();
-//     } else {
-//         mostrar();
-//     }
-// }

@@ -72,49 +72,45 @@
                     autofocus
                     oninput="convertirVocales()"
                 ></textarea>
-                <!-- onkeypress="if (event.keyCode == 13) ejecutarEnter()" -->
-                <!-- INPUT ONclick ENTER -->
 
-                <div class="seccion-inferior-izquierda">
-                    <div class="etiqueta-texto">
-                        <div>
-                            <i class="fa-solid fa-circle-exclamation fa-xl"></i>
-                        </div>
-                        <div>
-                            <p>
-                                Solo letras minúsculas y sin acentos. No se
-                                permiten caracteres especiales.
-                            </p>
-                        </div>
+                <div class="etiqueta-texto">
+                    <div>
+                        <i class="fa-solid fa-circle-exclamation fa-xl"></i>
                     </div>
+                    <div>
+                        <p>
+                            Solo letras minúsculas y sin acentos. No se permiten
+                            caracteres especiales.
+                        </p>
+                    </div>
+                </div>
 
-                    <!--  BOTONES DE ZONA IZQUIERDA -->
-                    <div class="grupo-botones">
-                        <div>
-                            <input
-                                class="btn-encriptar"
-                                id="encriptar"
-                                type="button"
-                                value="Encriptar"
-                                onclick="cifrarTexto()"
-                            />
-                        </div>
-                        <div>
-                            <input
-                                class="btn-desencriptar"
-                                id="desencriptar"
-                                type="button"
-                                value="Desencriptar"
-                                onclick="mostrarTextoDescifrado()"
-                            />
-                        </div>
+                <!--  BOTONES DE ZONA IZQUIERDA -->
+                <div class="grupo-botones">
+                    <div>
+                        <input
+                            class="btn-encriptar"
+                            id="encriptar"
+                            type="button"
+                            value="Encriptar"
+                            onclick="cifrarTexto()"
+                        />
+                    </div>
+                    <div>
+                        <input
+                            class="btn-desencriptar"
+                            id="desencriptar"
+                            type="button"
+                            value="Desencriptar"
+                            onclick="mostrarTextoDescifrado()"
+                        />
                     </div>
                 </div>
             </section>
 
             <!--  SECCIÓN DERECHA: RESULTADO DE TEXTO CIFRADO/DESCIFRADO -->
             <section class="seccion-Dos">
-                <article>
+                <article class="alertas">
                     <!-- ALERTA AL COPIAR -->
                     <div
                         class="alerta alerta-copiado alert alert-success align-items-center animate__animated animate__bounceInRight"
@@ -128,7 +124,7 @@
 
                     <!-- ALERTA AL CIFRAR -->
                     <div
-                        class="alerta alerta-cifrado alert alert-info align-items-center animate__animated animate__bounceInRight"
+                        class="alerta alerta-cifrado alert alert-success align-items-center animate__animated animate__bounceInRight"
                         role="alert"
                     >
                         <div>
@@ -139,7 +135,7 @@
 
                     <!-- ALERTA AL DESCIFRAR -->
                     <div
-                        class="alerta alerta-descifrado alert alert-primary align-items-center animate__animated animate__bounceInRight"
+                        class="alerta alerta-descifrado alert alert-success align-items-center animate__animated animate__bounceInRight"
                         role="alert"
                     >
                         <div>
@@ -159,26 +155,27 @@
                         autocapitalize="none"
                         readonly
                     ></textarea>
-                </div>
 
-                <!-- ESTADO DEFAULT: NO IMAGEN NI TEXTO -->
-                <div class="grupo-imagen">
-                    <img
-                        class="info-img"
-                        src="./images/character.png"
-                        alt="personaje-mensaje"
-                    />
+                    <!-- ESTADO DEFAULT: NO IMAGEN NI TEXTO -->
+                    <div class="grupo-imagen">
+                        <img
+                            class="info-img"
+                            src="./images/character.png"
+                            alt="personaje-mensaje"
+                        />
 
-                    <div class="no-msg">
-                        <div class="no-msg-encontrado">
-                            Ningún mensaje fue encontrado
-                        </div>
-                        <div class="no-msg-encontrado-desc">
-                            Ingresa el texto que deseas encriptar o
-                            desencriptar.
+                        <div class="no-msg">
+                            <div class="no-msg-encontrado">
+                                Ningún mensaje fue encontrado
+                            </div>
+                            <div class="no-msg-encontrado-desc">
+                                Ingresa el texto que deseas encriptar o
+                                desencriptar.
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- BOTON INPUT DERECHO -->
                 <input
                     class="btn-copiar"
@@ -196,6 +193,11 @@
                 <i class="fa-regular fa-copyright"></i>
                 <p id="year" class="year"></p>
                 <p>Miguel Barrera &nbsp; 🇲🇽</p>
+                <a
+                    href="http://oracle.com/mx/education/oracle-next-education/"
+                    target="_blank"
+                    >Alura Latam + Oracle ONE</a
+                >
             </div>
 
             <!-- SECCIÓN DE CONTACTO Y BOTONES SOCIALES -->
