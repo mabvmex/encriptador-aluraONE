@@ -1,5 +1,343 @@
-/* EXTRA SMALL DEVICES (PHONES, 390PX AND DOWN) */
-@media only screen and (max-width: 495px) {
+/* IPHONE SE DEVICES (PHONES, 375PX AND DOWN) */
+@media only screen and (max-width: 598px) {
+    body {
+        background-color: #f3f5fc;
+        font-family: inter;
+    }
+
+    .logo-alura {
+        display: flex;
+        position: fixed;
+
+        top: 20px;
+        left: -20px;
+        width: 100px;
+        height: 35px;
+
+        z-index: 1;
+    }
+
+    .texto-encriptar {
+        display: flex;
+        position: absolute;
+
+        width: 80%;
+        height: 20%;
+        left: 10%;
+        top: 40px;
+
+        font-size: 18px;
+        line-height: 18px;
+        color: #0b3871;
+        padding: 30px;
+        background-color: #f3f5fc;
+        border-style: none;
+        border-radius: 24px;
+        text-transform: lowercase;
+    }
+
+    ::placeholder {
+        color: #0b3871;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    textarea:focus {
+        outline: none;
+    }
+
+    .etiqueta-texto {
+        display: flex;
+        position: absolute;
+
+        left: 10%;
+        top: 28%;
+        width: 300px;
+        height: 0;
+
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        gap: 10px;
+        font-size: 12px;
+        color: #495057;
+    }
+
+    .grupo-botones {
+        display: flex;
+        position: absolute;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        top: 32%;
+        left: 50%;
+        width: 0px;
+        height: 0px;
+
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        justify-content: center;
+
+        gap: 10px;
+
+        .btn-encriptar {
+            width: 280px;
+            height: 60px !important;
+
+            padding: 10px;
+            border: 1px solid #0a3871;
+            border-radius: 24px;
+
+            background-color: #0b3871;
+            color: #fff;
+        }
+
+        .btn-desencriptar {
+            width: 280px;
+            height: 60px !important;
+
+            padding: 10px;
+            border: 1px solid #0a3871;
+            border-radius: 24px;
+
+            background-color: #d8dfe8;
+            color: #0b3871;
+        }
+    }
+
+    .btn-encriptar:hover {
+        border-color: #e5e5e5;
+        box-shadow: 5px 5px 25px 5px #0a3871;
+        transform: scale(1.05);
+    }
+
+    .btn-desencriptar:hover {
+        border-color: #f3f5fc;
+        box-shadow: 5px 5px 25px 5px #0a3871;
+        transform: scale(1.05);
+    }
+
+    .cuadro-texto-respuesta {
+        display: flex;
+        position: absolute;
+
+        width: 80%;
+        height: 30%;
+        left: 10%;
+        top: 60%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        border-radius: 24px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        box-shadow: 0px 24px 32px -8px #00000014;
+
+        .area-texto-respuesta {
+            display: flex;
+            position: relative;
+
+            width: 100%;
+            height: 68%;
+            left: 0%;
+            top: -16%;
+
+            padding: 25px;
+            border-radius: 24px;
+            border-style: hidden;
+            background-color: #fff;
+            font-size: 16px;
+            line-height: 18px;
+            color: #495057;
+            text-transform: lowercase;
+
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+    }
+
+    .no-msg {
+        display: flex;
+        position: absolute;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        top: 30%;
+        left: 10%;
+        width: 80%;
+        height: 122px;
+
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        > .no-msg-encontrado {
+            width: 350px;
+
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 29px;
+        }
+
+        > .no-msg-encontrado-desc {
+            width: 400px;
+
+            font-size: 16px;
+            line-height: 24px;
+            color: #495057;
+        }
+    }
+
+    .btn-copiar {
+        display: none;
+        position: absolute;
+
+        top: 72%;
+        left: 20%;
+        width: 60%;
+        height: 50px;
+
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        color: #0b3871;
+        background-color: #fff;
+        border: 1px solid #0a3871;
+        border-radius: 24px;
+    }
+
+    .btn-copiar:hover {
+        border-color: #0a3871;
+        box-shadow: 5px 5px 25px 5px #9eb9dc;
+        transform: scale(1.05);
+    }
+
+    .alerta-copiado,
+    .alerta-cifrado,
+    .alerta-descifrado {
+        display: none;
+        position: fixed;
+
+        top: 0px;
+        width: 100%;
+        height: 40px;
+        right: 0px;
+
+        font-size: 18px;
+        z-index: 1;
+        border-radius: 10px;
+    }
+
+    footer {
+        display: flex;
+        position: fixed;
+
+        height: auto;
+        bottom: 0;
+
+        width: 100%;
+        padding: 10px;
+
+        font-size: 14px;
+        color: #e5e5e5;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #0a3871;
+
+        > .footer-bar {
+            display: flex;
+            line-height: 0px;
+            gap: 10px;
+
+            justify-content: center;
+            align-items: center;
+
+            margin-top: 0px;
+
+            > .year {
+                align-content: center;
+            }
+
+            > a {
+                display: none;
+                color: #e5e5e5 !important;
+            }
+        }
+    }
+
+    .year {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .socialmedia {
+        display: flex;
+        position: fixed;
+
+        bottom: auto;
+        right: 30px;
+
+        margin: auto;
+        gap: 20px;
+
+        > a {
+            color: #c9c9d4;
+        }
+
+        > a:hover {
+            transform: scale(2); /* rotate(-10deg); */
+
+            > .fa-envelope:hover {
+                color: rgb(255, 166, 0);
+            }
+            > .fa-twitter {
+                color: #188cd8;
+            }
+
+            .fa-github {
+                color: #141b28;
+                background-image: radial-gradient(
+                    white 62%,
+                    #0a3871 5%,
+                    #0a3871 5%
+                );
+            }
+
+            .fa-linkedin {
+                color: #0b65c2;
+                background-image: radial-gradient(
+                    circle,
+                    white 63%,
+                    #0a3871 1%,
+                    #0a3871 1%
+                );
+            }
+        }
+    }
+
+    .info-img {
+        display: none;
+    }
+}
+/* EXTRA SMALL DEVICES (PHONES, 599PX AND UP) */
+@media only screen and (max-width: 599px) {
     body {
         background-color: #f3f5fc;
         font-family: inter;
@@ -167,15 +505,14 @@
     }
 
     .no-msg {
-        /* display: none; */
         display: flex;
         position: absolute;
         flex-wrap: wrap;
         flex-direction: row;
 
         top: 30%;
-        left: 0%;
-        width: 100%;
+        left: 10%;
+        width: 80%;
         height: 122px;
 
         text-align: center;
@@ -184,7 +521,7 @@
         gap: 16px;
 
         > .no-msg-encontrado {
-            width: 530px;
+            width: 350px;
 
             font-weight: bold;
             font-size: 24px;
@@ -192,7 +529,7 @@
         }
 
         > .no-msg-encontrado-desc {
-            width: 530px;
+            width: 400px;
 
             font-size: 16px;
             line-height: 24px;
@@ -204,12 +541,12 @@
         display: none;
         position: absolute;
 
-        top: 82%;
+        top: 72%;
         left: 20%;
         width: 60%;
-        height: 60px;
+        height: 65px;
 
-        padding: 20px;
+        padding: 24px;
         justify-content: center;
         align-items: center;
         margin-left: auto;
@@ -349,10 +686,10 @@
         display: flex;
         position: fixed;
 
-        top: 50px;
+        top: 20px;
         left: -20px;
-        width: 175px;
-        height: 80px;
+        width: 100px;
+        height: 50px;
 
         z-index: 1;
     }
@@ -360,13 +697,11 @@
     .texto-encriptar {
         display: flex;
         position: absolute;
-        flex-direction: column;
-        flex-shrink: 0;
 
-        width: 771px;
-        height: 450px;
-        left: 75px;
-        top: 152px;
+        width: 80%;
+        height: 20%;
+        left: 10%;
+        top: 120px;
 
         font-size: 32px;
         line-height: 32px;
@@ -376,9 +711,6 @@
         border-style: none;
         border-radius: 24px;
         text-transform: lowercase;
-
-        margin-left: auto;
-        margin-right: auto;
     }
 
     ::placeholder {
@@ -397,8 +729,8 @@
         display: flex;
         position: absolute;
 
-        left: 75px;
-        top: 650px;
+        left: 10%;
+        top: 36%;
         width: 550px;
         height: 0;
 
@@ -412,24 +744,21 @@
     }
 
     .grupo-botones {
-        top: 680px;
-        left: 75px;
-        width: 771px;
-        height: 200px;
-
-        display: inline-flex;
+        display: flex;
         position: absolute;
-        flex-direction: flex;
 
+        top: 42%;
+        left: 50%;
+        width: 0px;
+        height: 0px;
+
+        align-items: center;
         justify-content: center;
-        align-items: center;
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
+
         gap: 20px;
 
         .btn-encriptar {
-            width: 325px;
+            width: 280px;
             height: 80px;
 
             padding: 24px;
@@ -441,7 +770,7 @@
         }
 
         .btn-desencriptar {
-            width: 325px;
+            width: 280px;
             height: 80px;
 
             padding: 24px;
@@ -469,13 +798,10 @@
         display: flex;
         position: absolute;
 
-        top: 900px;
-        left: 75px;
-        width: 771px;
-        height: 500px;
-
-        margin-left: auto;
-        margin-right: auto;
+        width: 80%;
+        height: 37%;
+        left: 10%;
+        top: 55%;
 
         border-radius: 24px;
         flex-direction: column;
@@ -488,9 +814,10 @@
             display: flex;
             position: relative;
 
-            top: -75px;
-            width: 771px;
-            height: 350px;
+            width: 100%;
+            height: 68%;
+            left: 0%;
+            top: -16%;
 
             padding: 25px;
             border-radius: 24px;
@@ -512,15 +839,13 @@
     .no-msg {
         display: flex;
         position: absolute;
-        flex-direction: column;
+        flex-wrap: wrap;
+        flex-direction: row;
 
-        top: 1020px;
-        left: 180px;
-        width: 530px;
+        top: 30%;
+        left: 10%;
+        width: 80%;
         height: 122px;
-
-        margin-left: auto;
-        margin-right: auto;
 
         text-align: center;
         align-items: center;
@@ -528,7 +853,7 @@
         gap: 16px;
 
         > .no-msg-encontrado {
-            width: 530px;
+            width: 350px;
 
             font-weight: bold;
             font-size: 24px;
@@ -536,7 +861,7 @@
         }
 
         > .no-msg-encontrado-desc {
-            width: 530px;
+            width: 350px;
 
             font-size: 16px;
             line-height: 24px;
@@ -548,9 +873,9 @@
         display: none;
         position: absolute;
 
-        top: 1280px;
-        left: 90px;
-        width: 420px;
+        top: 72%;
+        left: 20%;
+        width: 60%;
         height: 80px;
 
         padding: 24px;
@@ -577,7 +902,7 @@
         display: none;
         position: fixed;
 
-        top: 0;
+        top: 0px;
         width: 100%;
         height: 80px;
         right: 0px;
@@ -587,10 +912,99 @@
         border-radius: 10px;
     }
 
-    .info-img,
-    .socialmedia,
-    .footer-bar,
     footer {
+        display: flex;
+        position: fixed;
+
+        height: auto;
+        bottom: 0;
+
+        width: 100%;
+        padding: 10px;
+
+        font-size: 14px;
+        color: #e5e5e5;
+        justify-content: left;
+        align-items: center;
+        background-color: #0a3871;
+
+        > .footer-bar {
+            display: flex;
+            line-height: 0px;
+            gap: 10px;
+
+            justify-content: center;
+            align-items: center;
+
+            margin-top: 0px;
+
+            > .year {
+                align-content: center;
+            }
+            > a {
+                color: #e5e5e5 !important;
+            }
+
+            > a:link {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .year {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .socialmedia {
+        display: flex;
+        position: fixed;
+
+        bottom: auto;
+        right: 30px;
+
+        margin: auto;
+        gap: 20px;
+
+        > a {
+            color: #c9c9d4;
+        }
+
+        > a:hover {
+            transform: scale(2); /* rotate(-10deg); */
+
+            > .fa-envelope:hover {
+                color: rgb(255, 166, 0);
+            }
+            > .fa-twitter {
+                color: #188cd8;
+            }
+
+            .fa-github {
+                color: #141b28;
+                background-image: radial-gradient(
+                    white 62%,
+                    #0a3871 5%,
+                    #0a3871 5%
+                );
+            }
+
+            .fa-linkedin {
+                color: #0b65c2;
+                background-image: radial-gradient(
+                    circle,
+                    white 63%,
+                    #0a3871 1%,
+                    #0a3871 1%
+                );
+            }
+        }
+    }
+
+    .info-img {
         display: none;
     }
 }
@@ -771,7 +1185,7 @@
         gap: 16px;
 
         > .no-msg-encontrado {
-            width: 530px;
+            width: 350px;
 
             font-weight: bold;
             font-size: 24px;
@@ -779,7 +1193,7 @@
         }
 
         > .no-msg-encontrado-desc {
-            width: 530px;
+            width: 350px;
 
             font-size: 16px;
             line-height: 24px;
@@ -791,9 +1205,9 @@
         display: none;
         position: absolute;
 
-        top: 81.5%;
-        left: 22%;
-        width: 420px;
+        top: 72%;
+        left: 25%;
+        width: 50%;
         height: 80px;
 
         padding: 24px;
@@ -1107,7 +1521,7 @@
         position: relative;
 
         top: 94px;
-        left: 0%;
+        left: 10%;
         width: 400px;
         height: 730px;
 
@@ -1176,12 +1590,16 @@
         text-align: center;
 
         > .no-msg-encontrado {
+            width: 350px;
+
             font-weight: bold;
             font-size: 24px;
             line-height: 29px;
         }
 
         > .no-msg-encontrado-desc {
+            width: 350px;
+
             font-size: 16px;
             line-height: 24px;
             color: #495057;
@@ -1192,8 +1610,8 @@
         display: none;
         position: relative;
 
-        width: 328px;
-        top: -68px;
+        width: 360px;
+        top: -25px;
         left: 0%;
 
         margin-left: auto;
@@ -1485,7 +1903,7 @@
         position: relative;
 
         top: 120px;
-        left: 10%;
+        left: 20%;
         width: 400px;
         height: 650px;
 
@@ -1554,12 +1972,16 @@
         text-align: center;
 
         > .no-msg-encontrado {
+            width: 350px;
+
             font-weight: bold;
             font-size: 24px;
             line-height: 29px;
         }
 
         > .no-msg-encontrado-desc {
+            width: 350px;
+
             font-size: 16px;
             line-height: 24px;
             color: #495057;
@@ -1568,12 +1990,11 @@
 
     .btn-copiar {
         display: none;
-        position: absolute;
+        position: relative;
 
-        width: 328px;
-        height: unset;
-        top: 647px;
-        left: 37%;
+        width: 360px;
+        top: -25px;
+        left: 0%;
 
         margin-left: auto;
         margin-right: auto;
@@ -1866,7 +2287,7 @@
         position: relative;
 
         top: 120px;
-        left: 0%;
+        left: 35%;
         width: 400px;
         height: 650px;
 
@@ -1903,9 +2324,12 @@
         position: absolute;
 
         top: 10%;
-        left: 0;
+        left: 5%;
         width: 400px;
         height: 400px;
+
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .info-img {
@@ -1935,12 +2359,16 @@
         text-align: center;
 
         > .no-msg-encontrado {
+            width: 350px;
+
             font-weight: bold;
             font-size: 24px;
             line-height: 29px;
         }
 
         > .no-msg-encontrado-desc {
+            width: 350px;
+
             font-size: 16px;
             line-height: 24px;
             color: #495057;
@@ -1949,15 +2377,15 @@
 
     .btn-copiar {
         display: none;
-        position: absolute;
+        position: relative;
 
-        width: 328px;
-        height: unset;
+        width: 360px;
+        top: -35px;
+        left: 0%;
+
+        /* width: 328px;
         top: 647px;
-        left: 37%;
-
-        margin-left: auto;
-        margin-right: auto;
+        left: 34%; */
 
         border-radius: 24px;
         border: 1px solid #0a3871;
