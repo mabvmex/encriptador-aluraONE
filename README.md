@@ -18,8 +18,9 @@ Challenge I del grupo 4: **challengeonecodificador4**.
 <br>
 
 <p align="center"> 
-    <img width="400" height="300" src="./images/home-encriptador.png" alt="mainpage-encriptador"> &nbsp; &nbsp;
-    <img width="400" height="300" src="./images/cifrado.png" alt="mainpage-encriptador">
+    <img width="100%" height="550px" src="./images/home-encriptador.png" alt="mainpage-encriptador"> 
+        <br> &nbsp; &nbsp;
+    <img width="100%" height="500px" src="./images/cifrado.png" alt="mainpage-encriptador">
 </p>
 
 <br> * 📱 QR para acceder directamente desde móviles.
