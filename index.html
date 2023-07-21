@@ -49,7 +49,7 @@
     <body>
         <header>
             <div>
-                <a href="https://mabvmex.github.io/encriptador-aluraONE/">
+                <a href="https://mabvmex.github.io/encriptador-aluraONE/" target="_blank">
                     <img
                         class="logo-alura"
                         src="./images/Logo1x.svg"
@@ -60,7 +60,7 @@
         </header>
 
         <!--  SECCIÓN IZQUIERDA: ESCRITURA DE TEXTO -->
-        <main class="principal">
+        <main>
             <section class="seccion-Uno">
                 <textarea
                     class="texto-encriptar"
@@ -72,6 +72,12 @@
                     autofocus
                     oninput="convertirVocales()"
                 ></textarea>
+
+                <button class="borrar" type="button" onclick="borrarTexto()">
+                    <i
+                        class="btn-borrar fa-solid fa-trash-can animate__animated"
+                    ></i>
+                </button>
 
                 <div class="etiqueta-texto">
                     <div>
@@ -159,12 +165,12 @@
                     <!-- ESTADO DEFAULT: NO IMAGEN NI TEXTO -->
                     <div class="grupo-imagen">
                         <img
-                            class="info-img"
+                            class="info-img animate__animated animate__fadeIn"
                             src="./images/character.png"
                             alt="personaje-mensaje"
                         />
 
-                        <div class="no-msg">
+                        <div class="no-msg animate__animated animate__fadeIn">
                             <div class="no-msg-encontrado">
                                 Ningún mensaje fue encontrado
                             </div>
@@ -177,7 +183,7 @@
 
                     <!-- BOTON INPUT DERECHO -->
                     <input
-                        class="btn-copiar"
+                        class="btn-copiar animate__animated"
                         id="copiar"
                         type="button"
                         value="Copiar"
@@ -231,7 +237,8 @@
             </div>
         </footer>
     </body>
-
     <!-- ARCHIVO JS PRINCIPAL -->
     <script src="./index.js"></script>
 </html>
+
+

@@ -30,8 +30,8 @@ function cifrarTexto() {
     });
 
     textoSalida.value = palabraCifrada;
+    textoEntrada.value = "";
     if (palabraCifrada.length === 0) {
-        textoSalida.value = "";
         return limpiezaInputCasoUno();
     } else {
         return limpiezaInputCasoDos();
@@ -63,6 +63,7 @@ function mostrarTextoDescifrado() {
     );
 
     textoSalida.value = palabraDescifrada;
+    textoEntrada.value = "";
     if (palabraDescifrada.length === 0) {
         return limpiezaInputCasoUno();
     } else {
@@ -90,7 +91,9 @@ function copiarResultado() {
         .catch((err) => {
             console.log("Algo salió mal al copiar: " + err);
         });
+    textoEntrada.value = texto;
     textoEntrada.focus();
+    textoEntrada.value = "";
 
     let tipoAlerta = ".alerta-copiado";
     clasesAnimacionAlerta(tipoAlerta);
@@ -118,15 +121,43 @@ function convertirVocales() {
 function limpiezaInputCasoUno() {
     document.querySelector(".grupo-imagen").style.display = "block";
     document.querySelector("#copiar").style.display = "none";
-    textoEntrada.value = "";
+    // textoEntrada.value = "";
     textoEntrada.focus();
 }
 
 function limpiezaInputCasoDos() {
-    document.querySelector(".grupo-imagen").style.display = "none";
-    document.querySelector("#copiar").style.display = "flex";
+    document.querySelector(".info-img").classList.add("animate__zoomOut");
+    document.querySelector(".no-msg").classList.add("animate__zoomOut");
+
+    setTimeout(animarSalida, 500);
+    function animarSalida() {
+        document.querySelector(".grupo-imagen").style.display = "none";
+        document.querySelector(".btn-copiar").classList.add("animate__fadeIn");
+        document
+            .querySelector(".info-img")
+            .classList.remove("animate__zoomOut");
+        document.querySelector(".no-msg").classList.remove("animate__zoomOut");
+        document.querySelector("#copiar").style.display = "flex";
+        // textoEntrada.value = "";
+        textoEntrada.focus();
+    }
+}
+
+/*  FUNCIÓN PARA BORRAR TEXTO */
+// ==============================================
+
+function borrarTexto() {
+    document.querySelector(".btn-borrar").classList.add("animate__bounceIn");
     textoEntrada.value = "";
-    textoEntrada.focus();
+    textoSalida.value = "";
+    limpiezaInputCasoUno();
+    setTimeout(basura, 500);
+    function basura() {
+        document
+            .querySelector(".btn-borrar")
+            .classList.remove("animate__bounceIn");
+    }
+    document.querySelector(".btn-borrar").classList.add("animate__bounceIn");
 }
 
 /*  FUNCIÓN PARA ANIMAR ALERTA DE NOTIFICACIÓN */
